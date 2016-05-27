@@ -481,6 +481,7 @@ BottomPannel에서는 1번처럼 direction을 받아 버튼을 움직이는 애�
 ...
 
   var TableClock = KakeraDOM.createClass("TableClock", {
+  	...
  	_tick: function (dateAndTime) {
 		if (this._listener["ticktock"]) {
 			for (var i = 0; i < this._listener["ticktock"].length; i++) {
