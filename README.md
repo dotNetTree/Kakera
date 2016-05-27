@@ -22,7 +22,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Hello Kakera~!</title>
-		<script scr="kakera/KakeraDOM.js"></script>
+		<script src="kakera/KakeraDOM.js"></script>
 	</head>
 	<body>
 		<div id="injectTarget"></div>
