@@ -145,7 +145,7 @@ TableClock
  ...
 
 ```
-1번에서 상단부에 해당하는 `Display` component class를 생성한다. 그리고, 2번에서 하단부에 해당하는 `BottomPannel` compnent class를 생성한다.
+1번에서 상단부에 해당하는 `Display` component class를 생성한다. 그리고, 2번에서 하단부에 해당하는 `BottomPannel` component class를 생성한다.
 이번에 main component에 해당하는 TableClock에 `deps`라는 spec이 추가가 되었는데, 이는 template을 사용된 custom element가 상단에서 정의한 component class에 해당함을 정의한다. 주의해야 하는 부분은 template에 정의할 때, 반드시 component class에 해당하는 변수명이 아닌 **`classAlias`**로 해야한다.
 
 #### 디자인 입히기
