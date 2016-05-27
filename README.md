@@ -44,9 +44,11 @@
 ## 튜토리얼
 대략적인 Kakera 프레임워크의 흐름을 배우기 위해 간단한 튜토리얼을 해보기로 하자.
 튜토리얼의 주제는 "탁상시계"이다. 이해를 돕기 위해 아래 그림을 보기로하자.
+
 ![table_clock](table_clock.png)
 
 우리는 이 탁상시계를 다음과 같이 분해를 할 것이다.
+
 ![table_clock](table_clock2.png)
 
 분해한 component structure는 다음과 같이 된다.
