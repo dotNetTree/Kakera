@@ -14,7 +14,7 @@
 9. 이미 작성한 코드를 다른 SPA로의 마이그레이션이 용이하다.
 
 ## 시작하기
-[Start-Kit](https://github.com/dotNetTree/Kakera)을 받은 후 `app`폴더 밑에 hellokakera.html을 만들어보자.
+[Start-Kit](https://github.com/dotNetTree/KakeraStaterKit/archive/master.zip)을 받은 후 `app`폴더 밑에 hellokakera.html을 만들어보자.
 
 ```
 <!doctype html>
