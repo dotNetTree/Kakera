@@ -60,7 +60,7 @@ TableClock
 ```
 
 
-본격적인 튜토리얼에 들어가기 앞서 받은 Start-Kit의 `app`폴더에 table_clock.html을 만든 후 다음과 같이 작성한다.
+본격적인 튜토리얼에 들어가기 앞서 받은 Start-Kit의 `app`폴더에 table_clock.html을 만든 후 다음과 같이 작성한다. (만약 full-source를 먼저 보고 싶다면 [여기](#full-source)를 클릭할 것!)
 
 ```
 <!DOCTYPE HTML>
@@ -495,6 +495,152 @@ BottomPannel에서는 1번처럼 direction을 받아 버튼을 움직이는 애�
 ...
 ```
 이전까지는 2번에서 리스너로 Object를 넘겨주었는데 이 부분을 mode에 따라 해당하는 문자열을 넘겨주도록 수정하고, 1번처럼 리스너로 들어오는 문자열을 바로 화면에 출력시키도록 수정한다.
+
+#### <a name="full-source">full-source</a>
+위 튜토리얼의 전체 소스는 다음과 같다.
+
+```
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<title>탁상시계</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="styles/css/starter.css">
+</head>
+<body>
+  <div id="tableClock"></div>
+  <script src="kakera/KakeraDOM.js"></script
+  <script src="js/convenience/Ticktock.js"></script>
+  
+  <script>
+  var Display = KakeraDOM.createClass("Display", {
+  	template:
+ 	"<div class='display'>\
+ 	</div>",
+ 	init: function () {
+		this._removeListener = this.props.addListener("ticktock", function (dateAndTime) {
+			this.el.innerText = dateAndTime;
+		}.bind(this));
+	},
+ 	willMount: function () {
+ 		this.el.innerText = this.props.initText;
+ 	},
+ 	destroy: function () {
+ 		this._removeListener();
+ 		this._removeListener = null;
+ 	}
+  });
+  
+  var Pannel = KakeraDOM.createClass("BottomPannel", {
+  	btnMoveTo: function (direction) {
+  		var elem = this.el.querySelector("span"),
+    		pos, to, dir;
+
+  		if (direction === "left") {
+    		pos = 48;
+    		to = 0;
+    		dir = -1;
+  		} else {
+    		pos = 0;
+    		to = 48;
+    		dir = 1;
+  		}
+
+  		var id = setInterval(frame, 5);
+  		function frame() {
+    		if (pos === to) {
+      			clearInterval(id);
+    		} else {
+      			pos+=dir;
+      			elem.style.left = pos + 'px';
+    		}
+  		}
+	},
+ 	template:
+ 	"<div class='bottom-pannel'>\
+   		<span></span>\
+   		<ul>\
+     		<li><a href='javascript:void(0);'>Date</a></li>\
+     		<li><a href='javascript:void(0);'>Time</a></li>\
+   		</ul>\
+ 	</div>",
+ 	listener: {
+ 		"click span": function (e) {
+ 			this.props.modeToggle();
+ 		}
+ 	}
+  });
+  
+  var TableClock = KakeraDOM.createClass("TableClock", {
+  	_mode: "time",
+ 	onModeToggle: function () {
+ 		var bPannel = this.children("BottomPannel")[0];
+ 		if (this._mode === "time") {
+ 			this._mode = "date";
+ 			bPannel.btnMoveTo("left");
+ 		} else {
+ 			this._mode = "time";
+ 			bPannel.btnMoveTo("right");
+ 		}
+ 	},
+  	addListener: function (type, listener) {
+  		this._listener[type] = this._listener[type] || [];
+  		this._listener[type].push(listener);
+
+  		return function () {
+  			this.removeListner(type, listener);
+  		}.bind(this);
+  	},
+  	removeListener: function (type, listener) {
+  		if (this._listener[type]) {
+  			for (var i = 0; i < this._listener[type].length; i++) {
+  				if (this._listener[type][i] === listener) {
+  					this._listener[type].splice(i, 1);
+  					break;
+  				}
+  			}
+  		}
+  	},
+    _tick: function (dateAndTime) {
+  		if (this._listener["ticktock"]) {
+  			for (var i = 0; i < this._listener["ticktock"].length; i++) {
+  				this._listener["ticktock"][i](dateAndTime[this._mode]);
+  			}
+  		}
+  	},
+    deps: [Display, Pannel],
+  	template:
+  	"<div class='clock-wrap'>\
+  		<h1><img src='styles/images/logo_clock.png' /></h1>\
+  		<Display initText='Booting...'\
+  				 addListener={this.addListener}/>\
+  		<BottomPannel modeToggle={this.onModeToggle} />\
+  	</div>",
+  	init: function () {
+  		this._listener = {};
+  		this._ticktock = new Ticktock();
+  		this._ticktock.start(this._tick.bind(this));
+  	},
+  	destroy: function () {
+  		this._ticktock.stop();
+  	}
+  });
+  
+  KakeraDOM.render(
+  	new TableClock(),
+  	document.getElementById("tableClock")
+  );
+  
+  </script>
+  
+</body>
+</html>
+```
+
 
 ## API 문서
 작성 중...
