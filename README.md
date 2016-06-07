@@ -513,7 +513,7 @@ BottomPannel에서는 1번처럼 direction을 받아 버튼을 움직이는 애�
 </head>
 <body>
   <div id="tableClock"></div>
-  <script src="kakera/KakeraDOM.js"></script
+  <script src="kakera/KakeraDOM.js"></script>
   <script src="js/convenience/Ticktock.js"></script>
   
   <script>
@@ -644,6 +644,17 @@ BottomPannel에서는 1번처럼 direction을 받아 버튼을 움직이는 애�
 
 ## API 문서
 작성 중...
+
+## Release note
+- 1.1.1 (16.05.30)
+	- bugfix 
+		- removeChild 시 정상적으로 children에서 삭제되지 않는 버그 수정. 
+- 1.1.0 (16.05.09)
+	- KakeraOriginClass 
+		- subclass function 추가. 
+		- multiline function deprecated 됨.
+- 1.0.0 (16.01.13)
+	- Kakera framework의 시작
 
 
 ## Copyright
