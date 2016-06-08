@@ -1,5 +1,3 @@
-#Kakera
-
 ## 소개
 **Kakera**는 Web browser에서 동작하는 JavaScript framework이며 [SPA(Single-page application)](https://en.wikipedia.org/wiki/Single-page_application)의 원칙을 채용하였으며 현재 유행하는 SPA framework인 [React](https://facebook.github.io/react/)처럼 MVC패턴 중 V(View)만을 담당하도록 설계되어 있다. 
 
