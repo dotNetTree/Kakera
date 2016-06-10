@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Namespace: KakeraDOM</title>
+
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/jaguar.css">
+
+
+    <script>
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true}};
+    </script>
+
+
+
+</head>
+<body>
+<div id="wrap" class="clearfix">
+
+<div class="navigation">
+    <h3 class="applicationName"><a href="index.html"></a></h3>
+
+    <div class="search">
+        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentations">
+    </div>
+    <ul class="list">
+
+        <li class="item" data-name="KakeraDOM">
+            <span class="title">
+                <a href="KakeraDOM.html">KakeraDOM</a>
+
+                <span class="static">static</span>
+
+            </span>
+            <ul class="members itemMembers">
+
+            <span class="subtitle">Members</span>
+
+                <li data-name="KakeraDOM.delay"><a href="KakeraDOM.html#.delay">delay</a></li>
+
+                <li data-name="KakeraDOM.useFreeze"><a href="KakeraDOM.html#.useFreeze">useFreeze</a></li>
+
+            </ul>
+            <ul class="typedefs itemMembers">
+
+            </ul>
+            <ul class="methods itemMembers">
+
+            <span class="subtitle">Methods</span>
+
+                <li data-name="KakeraDOM.createClass"><a href="KakeraDOM.html#.createClass">createClass</a></li>
+
+                <li data-name="KakeraDOM.debounce"><a href="KakeraDOM.html#.debounce">debounce</a></li>
+
+                <li data-name="KakeraDOM.deepObjCopy"><a href="KakeraDOM.html#.deepObjCopy">deepObjCopy</a></li>
+
+                <li data-name="KakeraDOM.extend"><a href="KakeraDOM.html#.extend">extend</a></li>
+
+                <li data-name="KakeraDOM.format"><a href="KakeraDOM.html#.format">format</a></li>
+
+                <li data-name="KakeraDOM.multiline"><a href="KakeraDOM.html#.multiline">multiline</a></li>
+
+                <li data-name="KakeraDOM.render"><a href="KakeraDOM.html#.render">render</a></li>
+
+            </ul>
+            <ul class="events itemMembers">
+
+            </ul>
+        </li>
+
+        <li class="item" data-name="KakeraClass">
+            <span class="title">
+                <a href="KakeraClass.html">KakeraClass</a>
+
+            </span>
+            <ul class="members itemMembers">
+
+            <span class="subtitle">Members</span>
+
+                <li data-name="KakeraClass#deps"><a href="KakeraClass.html#deps">deps</a></li>
+
+                <li data-name="KakeraClass#template"><a href="KakeraClass.html#template">template</a></li>
+
+            </ul>
+            <ul class="typedefs itemMembers">
+
+            </ul>
+            <ul class="methods itemMembers">
+
+            <span class="subtitle">Methods</span>
+
+                <li data-name="KakeraClass#addChild"><a href="KakeraClass.html#addChild">addChild</a></li>
+
+                <li data-name="KakeraClass#children"><a href="KakeraClass.html#children">children</a></li>
+
+                <li data-name="KakeraClass#didMount"><a href="KakeraClass.html#didMount">didMount</a></li>
+
+                <li data-name="KakeraClass#init"><a href="KakeraClass.html#init">init</a></li>
+
+                <li data-name="KakeraClass#refresh"><a href="KakeraClass.html#refresh">refresh</a></li>
+
+                <li data-name="KakeraClass#release"><a href="KakeraClass.html#release">release</a></li>
+
+                <li data-name="KakeraClass#removeAllChild"><a href="KakeraClass.html#removeAllChild">removeAllChild</a></li>
+
+                <li data-name="KakeraClass#removeChild"><a href="KakeraClass.html#removeChild">removeChild</a></li>
+
+                <li data-name="KakeraClass#render"><a href="KakeraClass.html#render">render</a></li>
+
+                <li data-name="KakeraClass#willMount"><a href="KakeraClass.html#willMount">willMount</a></li>
+
+            </ul>
+            <ul class="events itemMembers">
+
+            </ul>
+        </li>
+
+    </ul>
+</div>
+    <div class="main">
+        <h1 class="page-title" data-filename="KakeraDOM.html">Namespace: KakeraDOM</h1>
+
+
+
+
+<section>
+
+<header>
+    <h2>
+    KakeraDOM
+    </h2>
+
+</header>
+
+<article>
+    <div class="container-overview">
+
+
+
+
+            <div class="description">KakeraDOM.</div>
+
+
+
+<dl class="details">
+
+
+
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>1.1.1</li></ul></dd>
+
+
+
+
+
+
+
+
+
+
+
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li>Copyright (C) CABSOFTWARE.COM - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
+Written by Seungchul Kang &lt;ksc214@gmail.com>, November 2015</li></ul></dd>
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".delay"><span class="type-signature static">static</span>KakeraDOM.delay<span class="type-signature type number">Number</span> </h4>
+    </div>
+
+
+</dt>
+<dd>
+
+    <div class="description">
+        framework에서 실행 프레임을 지연 처리할 경우 사용되는 값(ms).
+예를 들면 willMount 이후 호출되는 didMount를 몇 ms 후에 호출할지를 결정.
+    </div>
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy"><li>0</li></ul></dd>
+
+
+
+
+
+
+
+</dl>
+
+
+
+</dd>
+
+
+
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".useFreeze"><span class="type-signature static">static</span>KakeraDOM.useFreeze<span class="type-signature type boolean">Boolean</span> </h4>
+    </div>
+
+
+</dt>
+<dd>
+
+    <div class="description">
+        props를 freezing 할지 여부.
+(!주의 - ie8에서는 지원되지 않음을 상기할 것.)
+    </div>
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+</dd>
+
+        </dl>
+
+
+
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".createClass">
+
+            <span class="type-signature static">static</span>KakeraDOM.createClass<span class="signature">(classAlias, spec)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{KakeraSubClass}</span>
+        </h4>
+
+
+
+    </div>
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        Kakera sub class를 생성한다.
+    </div>
+
+
+
+
+
+
+
+
+
+<table class="params">
+    <thead>
+	<tr>
+
+		<th>Name</th>
+
+
+		<th>Type</th>
+
+
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+
+
+        <tr>
+
+                <td class="name"><code>classAlias</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">String</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                생성할 Kakera sub class의 이름(별명).</td>
+        </tr>
+
+
+
+        <tr>
+
+                <td class="name"><code>spec</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">Object</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                Kakera sub class의 spec.</td>
+        </tr>
+
+
+	</tbody>
+</table>
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Returns:</h5>
+
+
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+
+            <td class="type">
+
+                        KakeraSubClass
+
+
+            </td>
+            <td class="description last">생성된 Kakera class의 sub Class.</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+
+        <h5>Example</h5>
+
+
+
+    <pre class="prettyprint"><code>var HelloKakera = KakeraDOM.createClass("HelloKakera", {
+  template: "&ltp>hello kakera&lt/p>"
+});</code></pre>
+
+
+
+</dd>
+
+
+
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".debounce">
+
+            <span class="type-signature static">static</span>KakeraDOM.debounce<span class="signature">(func, wait, immediate)</span>
+        </h4>
+
+
+
+    </div>
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        설정한 function을 일정한 시간 내에 한 번만 실행되도록한다.
+    </div>
+
+
+
+
+
+
+
+
+
+<table class="params">
+    <thead>
+	<tr>
+
+		<th>Name</th>
+
+
+		<th>Type</th>
+
+
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+
+
+        <tr>
+
+                <td class="name"><code>func</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">function</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                설정하고 싶은 function.</td>
+        </tr>
+
+
+
+        <tr>
+
+                <td class="name"><code>wait</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">Number</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                주기(ms).</td>
+        </tr>
+
+
+
+        <tr>
+
+                <td class="name"><code>immediate</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">Boolean</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                즉각 실행여부.</td>
+        </tr>
+
+
+	</tbody>
+</table>
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h5>Example</h5>
+
+
+
+    <pre class="prettyprint"><code>// 스크롤 이벤트에 대한 callback처리를 30ms마다 한다.
+document.getElementById("myDIV").addEventListener(
+  "scroll",
+  KakeraDOM.debounce(function () { console.log("scroll...") }, 30, false)
+);</code></pre>
+
+
+
+</dd>
+
+
+
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".deepObjCopy">
+
+            <span class="type-signature static">static</span>KakeraDOM.deepObjCopy<span class="signature">(dupeObj)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Object}</span>
+        </h4>
+
+
+    </div>
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        오브젝트를 깊은 복사를 합니다.
+출처 : http://www.overset.com/2007/07/11/javascript-recursive-object-copy-deep-object-copy-pass-by-value/
+    </div>
+
+
+
+
+
+
+
+
+
+<table class="params">
+    <thead>
+	<tr>
+
+		<th>Name</th>
+
+
+		<th>Type</th>
+
+
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+
+
+        <tr>
+
+                <td class="name"><code>dupeObj</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">Object</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                복사할 대상.</td>
+        </tr>
+
+
+	</tbody>
+</table>
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Returns:</h5>
+
+
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+
+            <td class="type">
+
+                        Object
+
+
+            </td>
+            <td class="description last">복사된 새로운 오브젝트.</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+
+        <h5>Example</h5>
+
+
+
+    <pre class="prettyprint"><code>var a = { name: "철이" };
+var b = a;
+a === b // true;
+
+b = KakeraDOM.deepObjCopy(a);
+a === b // false;</code></pre>
+
+
+
+</dd>
+
+
+
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".extend">
+
+            <span class="type-signature static">static</span>KakeraDOM.extend<span class="signature">(obj1, obj2)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Object}</span>
+        </h4>
+
+
+
+    </div>
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        object를 확장합니다.
+    </div>
+
+
+
+
+
+
+
+
+
+<table class="params">
+    <thead>
+	<tr>
+
+		<th>Name</th>
+
+
+		<th>Type</th>
+
+
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+
+
+        <tr>
+
+                <td class="name"><code>obj1</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">Object</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                확장할 대상.</td>
+        </tr>
+
+
+
+        <tr>
+
+                <td class="name"><code>obj2</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">Object</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                확장할 내용.</td>
+        </tr>
+
+
+	</tbody>
+</table>
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Returns:</h5>
+
+
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+
+            <td class="type">
+
+                        Object
+
+
+            </td>
+            <td class="description last">확장된 대상.</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+
+        <h5>Example</h5>
+
+
+
+    <pre class="prettyprint"><code>var a = { name: "철이" };
+// { name: "철이" }
+a = KakeraDOM.extend(a, { age: 21 });
+// { name: "철이", age: 21 }</code></pre>
+
+
+
+</dd>
+
+
+
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".format">
+
+            <span class="type-signature static">static</span>KakeraDOM.format<span class="signature">(format, args)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{String}</span>
+        </h4>
+
+
+
+    </div>
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        보간(Interpolation)을 활용한 문자열 format.
+    </div>
+
+
+
+
+
+
+
+
+
+<table class="params">
+    <thead>
+	<tr>
+
+		<th>Name</th>
+
+
+		<th>Type</th>
+
+
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+
+
+        <tr>
+
+                <td class="name"><code>format</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">String</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                보간이 삽입되어 있는 문자열.</td>
+        </tr>
+
+
+
+        <tr>
+
+                <td class="name"><code>args</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                치환될 값.</td>
+        </tr>
+
+
+	</tbody>
+</table>
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Returns:</h5>
+
+
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+
+            <td class="type">
+
+                        String
+
+
+            </td>
+            <td class="description last">변환된 문자열.</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+
+        <h5>Example</h5>
+
+
+
+    <pre class="prettyprint"><code>KakeraDOM.format("{0}와 {1}", "철이", "미애");
+// 철이와 미애
+
+KakeraDOM.format("제 이름은 {name}이고 나이는 {age}입니다.", {name: "철이", age: "21"});
+// 제 이름은 철이이고 나이는 21입니다.
+
+KakeraDOM.format("제 이름은 {0}이고 나이는 {0}입니다.", ["철이", 21]);
+// 제 이름은 철이이고 나이는 21입니다.</code></pre>
+
+
+
+</dd>
+
+
+
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".multiline">
+
+            <span class="type-signature static">static</span>KakeraDOM.multiline<span class="signature">(F)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{String}</span>
+        </h4>
+
+
+
+    </div>
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        parameter F의 주석을 문자열로 변환한다.
+결과적으로 자유롭게 multiline을 구성할 수 있게 된다.
+    </div>
+
+
+
+
+
+
+
+
+
+<table class="params">
+    <thead>
+	<tr>
+
+		<th>Name</th>
+
+
+		<th>Type</th>
+
+
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+
+
+        <tr>
+
+                <td class="name"><code>F</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">function</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                anonymous function.</td>
+        </tr>
+
+
+	</tbody>
+</table>
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+        <dt class="important tag-deprecated">Deprecated</dt><dd><ul class="dummy"><li>since version 1.1.0</li><ul></dd>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Returns:</h5>
+
+
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+
+            <td class="type">
+
+                        String
+
+
+            </td>
+            <td class="description last">anonymous function의 /*!와 <i>*</i>/사이에 적혀있는 문자열.</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+
+
+        <h5>Example</h5>
+
+
+
+    <pre class="prettyprint"><code>KakeraDOM.multiline(function () { /*!
+이런 식으로 여러줄을 정의 할 수 있습니다.
+하시만, 몇몇 브라우져에서 정상동작 하지 않는 경우가 있으므로 product에서 사용하지 않으시길 바랍니다.
+<i>*</i>/});
+// 이런 식으로 여러줄을 정의 할 수 있습니다.
+// 하시만, 몇몇 브라우져에서 정상동작 하지 않는 경우가 있으므로 product에서 사용하지 않으시길 바랍니다.</code></pre>
+
+
+
+</dd>
+
+
+
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".render">
+
+            <span class="type-signature static">static</span>KakeraDOM.render<span class="signature">(kakeraIns, el)</span>
+        </h4>
+
+
+
+    </div>
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        Kakera Class의 인스턴스를 타겟 엘레멘트에 reneder를 한다.
+    </div>
+
+
+
+
+
+
+
+
+
+<table class="params">
+    <thead>
+	<tr>
+
+		<th>Name</th>
+
+
+		<th>Type</th>
+
+
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+
+
+        <tr>
+
+                <td class="name"><code>kakeraIns</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">Object</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                KakeraClass의 인스턴스.</td>
+        </tr>
+
+
+
+        <tr>
+
+                <td class="name"><code>el</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">Element</span>
+
+
+
+            </td>
+
+
+
+            <td class="description last">
+
+                render될 영역 element.</td>
+        </tr>
+
+
+	</tbody>
+</table>
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h5>Example</h5>
+
+
+
+    <pre class="prettyprint"><code>...
+&lt;div id='target'>
+...
+&lt;script>
+var HelloKakera = KakeraDOM.createClass("HelloKakera", {
+  template: "&ltp>hello kakera&lt/p>"
+});
+
+KakeraDOM.render(new HelloKakera(), document.getElementById("target"));
+&lt;/script></code></pre>
+
+
+
+</dd>
+
+        </dl>
+
+
+
+
+
+</article>
+
+</section>
+
+
+
+
+
+
+
+        <footer>
+            Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Jun 10 2016 17:43:29 GMT+0900 (KST)
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/jaguar.js"></script>
+</body>
+</html>
