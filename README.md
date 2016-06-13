@@ -14,7 +14,38 @@
 9. 이미 작성한 코드를 다른 SPA로의 마이그레이션이 용이하다.
 
 ## 시작하기
-[Start-Kit](https://github.com/dotNetTree/KakeraStaterKit/archive/master.zip)을 받은 후 `app`폴더 밑에 hellokakera.html을 만들어보자.
+<div>
+	<style type="text/css">
+	  .main-content h2 {
+	    border-bottom:1px solid #eee !important;
+	  }
+	  .btn-download {
+	    font-size: 24px;
+	    background: #cc7a6f;
+	    color: #fafafa;
+	    border-radius: 4px;
+	    padding: 8px 16px;
+	    font-weight: 400;
+	    margin: 0 12px;
+	    display: inline-block;
+	    /*text-shadow: 0 1px 3px rgba(0,0,0,0.3);*/
+	    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+	    text-decoration: none;
+	    box-sizing: border-box;
+	    border: none;
+	  }
+	  .btn-download:hover {
+	    text-decoration: none;
+	  }
+	</style>
+</div>
+간단하게 시작해보려면 아래의 Starter-Kit을 내려받도록하자. Starter-Kit에는 튜토리얼을 진행하기 위한 css/image, js 모듈도 포함되어 있다.
+<p style="text-align: center;">
+  <a href="https://github.com/dotNetTree/KakeraStaterKit/archive/master.zip" class="btn-download">
+    Download Starter-Kit 1.1.1
+  </a>
+</p>
+Starter-Kit 을 받은 후 `app`폴더 밑에 hellokakera.html을 생성하고 아래의 코드를 작성해보자.
 
 ```
 <!doctype html>
@@ -39,7 +70,9 @@
 </html>
 
 ```
-여기에서 KakeraDOM.createClass에 의해 생성된 Function을 **Component Class**라 부르며 이를 활용하여 복잡하고 다양한 화면과 기능을 구현할 수 있게 된다.
+Kakera는 기타 alt.js들과 다르게 transpiler가 필요하지않으며, 이미 이 상태로 Product를 생산할 수 있는 준비가 완료된 것이다.
+
+위 코드에서 KakeraDOM.createClass에 의해 생성된 Function을 **Component Class**라 부르며 이를 활용하여 복잡하고 다양한 화면과 기능을 구현할 수 있게 된다.
 
 ## 튜토리얼
 대략적인 Kakera 프레임워크의 흐름을 배우기 위해 간단한 튜토리얼을 해보기로 하자.
@@ -641,16 +674,69 @@ BottomPannel에서는 1번처럼 direction을 받아 버튼을 움직이는 애�
 </html>
 ```
 
+## Component Specs / Lifecycle
+
+
+### Component Specs
+
+#### [template](http://dotnettree.github.io/Kakera/out/KakeraClass.html#template) / [render](http://dotnettree.github.io/Kakera/out/KakeraClass.html#render)
+```
+string template
+string|object render()
+```
+template, render function은 둘 중 하나가 반드시 구현되어야 한다.
+둘 다 single child element 형태의 문자열을 반환해야 한다.
+
+#### [mixins](http://dotnettree.github.io/Kakera/out/KakeraClass.html#mixins)
+```
+array mixins
+```
+Kakera는 javascript code를 재활용하기 위한 minxin 패턴을 제공한다. 여러 component가 mixins를 활용하여 동일한 behavior를 공유할 수  있도록 할 수 있다.
+
+#### [deps](http://dotnettree.github.io/Kakera/out/KakeraClass.html#deps)
+```
+array deps
+```
+component의 의존성을 설정한다. 여기서 이야기하는 의존성 설정이란 자기자신이 가지는 child component의 class를 deps에 넣어줘야 한다는 것을 의미한다. 
+
+### Lifecycle
+
+#### [init](http://dotnettree.github.io/Kakera/out/KakeraClass.html#init)
+```
+void init
+```
+component의 initialize function.
+
+#### [willMount](http://dotnettree.github.io/Kakera/out/KakeraClass.html#willMount)
+
+```
+void willMount
+```
+component가 document에 append되기 직전에 호출된다. ajax 호출 등을 이 function에서 구현한다.
+
+#### [didMount](http://dotnettree.github.io/Kakera/out/KakeraClass.html#didMount)
+
+```
+void didMount
+```
+component가 document에 append된 직후에 호출된다. component의 layout 설정 등을 이 function에서 구현한다.
+
+#### [destroy](http://dotnettree.github.io/Kakera/out/KakeraClass.html#didMount)
+
+```
+void destroy
+```
+component가 document에 remove 될 시 호출된다. init function에서 설정한 listener 또는 timer 등을 이 function에서 제거한다.
 
 ## API 문서
-작성 중...
+[여기 클릭](http://dotnettree.github.io/Kakera/out/KakeraDOM.html)
 
 ## Release note
 - 1.1.1 (16.05.30)
 	- bugfix 
 		- removeChild 시 정상적으로 children에서 삭제되지 않는 버그 수정. 
 - 1.1.0 (16.05.09)
-	- KakeraOriginClass 
+	- KakeraClass 
 		- subclass function 추가. 
 		- multiline function deprecated 됨.
 - 1.0.0 (16.01.13)
