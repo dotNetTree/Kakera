@@ -19,7 +19,12 @@
     </section>
 
     <section class="main-content">
-      <h2>
+      <h1>
+<a id="kakera" class="anchor" href="#kakera" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Kakera</h1>
+
+<p></p>
+
+<h2>
 <a id="소개" class="anchor" href="#%EC%86%8C%EA%B0%9C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>소개</h2>
 
 <p><strong>Kakera</strong>는 Web browser에서 동작하는 JavaScript framework이며 <a href="https://en.wikipedia.org/wiki/Single-page_application">SPA(Single-page application)</a>의 원칙을 채용하였으며 현재 유행하는 SPA framework인 <a href="https://facebook.github.io/react/">React</a>처럼 MVC패턴 중 V(View)만을 담당하도록 설계되어 있다. </p>
@@ -39,7 +44,15 @@
 <h2>
 <a id="시작하기" class="anchor" href="#%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>시작하기</h2>
 
-<p><a href="https://github.com/dotNetTree/KakeraStaterKit/archive/master.zip">Start-Kit</a>을 받은 후 <code>app</code>폴더 밑에 hellokakera.html을 만들어보자.</p>
+<p>간단하게 시작해보려면 아래의 Starter-Kit을 내려받도록하자. Starter-Kit에는 튜토리얼을 진행하기 위한 css/image, js 모듈도 포함되어 있다.</p>
+
+<p>
+  <a href="https://github.com/dotNetTree/KakeraStaterKit/archive/master.zip">
+    Download Starter-Kit 1.1.1
+  </a>
+</p>
+
+<p>Starter-Kit 을 받은 후 <code>app</code>폴더 밑에 hellokakera.html을 생성하고 아래의 코드를 작성해보자.</p>
 
 <pre><code>&lt;!doctype html&gt;
 &lt;html&gt;
@@ -64,7 +77,9 @@
 
 </code></pre>
 
-<p>여기에서 KakeraDOM.createClass에 의해 생성된 Function을 <strong>Component Class</strong>라 부르며 이를 활용하여 복잡하고 다양한 화면과 기능을 구현할 수 있게 된다.</p>
+<p>Kakera는 기타 alt.js들과 다르게 transpiler가 필요하지않으며, 이미 이 상태로 Product를 생산할 수 있는 준비가 완료된 것이다.</p>
+
+<p>위 코드에서 KakeraDOM.createClass에 의해 생성된 Function을 <strong>Component Class</strong>라 부르며 이를 활용하여 복잡하고 다양한 화면과 기능을 구현할 수 있게 된다.</p>
 
 <h2>
 <a id="튜토리얼" class="anchor" href="#%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>튜토리얼</h2>
@@ -72,11 +87,11 @@
 <p>대략적인 Kakera 프레임워크의 흐름을 배우기 위해 간단한 튜토리얼을 해보기로 하자.
 튜토리얼의 주제는 "탁상시계"이다. 이해를 돕기 위해 아래 그림을 보기로하자.</p>
 
-<p><img src="table_clock.png" alt="table_clock"></p>
+<p><img src="./table_clock.png" alt="table_clock"></p>
 
 <p>우리는 이 탁상시계를 다음과 같이 분해를 할 것이다.</p>
 
-<p><img src="table_clock2.png" alt="table_clock"></p>
+<p><img src="./table_clock2.png" alt="table_clock"></p>
 
 <p>분해한 component structure는 다음과 같이 된다.</p>
 
@@ -692,9 +707,83 @@ listener의 key는 event명+공백+css selector 형태로 만들어야 하며 va
 </code></pre>
 
 <h2>
+<a id="component-specs--lifecycle" class="anchor" href="#component-specs--lifecycle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Component Specs / Lifecycle</h2>
+
+<h3>
+<a id="component-specs" class="anchor" href="#component-specs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Component Specs</h3>
+
+<h4>
+<a id="template--render" class="anchor" href="#template--render" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://dotnettree.github.io/Kakera/out/KakeraClass.html#template">template</a> / <a href="http://dotnettree.github.io/Kakera/out/KakeraClass.html#render">render</a>
+</h4>
+
+<pre><code>string template
+string|object render()
+</code></pre>
+
+<p>template, render function은 둘 중 하나가 반드시 구현되어야 한다.
+둘 다 single child element 형태의 문자열을 반환해야 한다.</p>
+
+<h4>
+<a id="mixins" class="anchor" href="#mixins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://dotnettree.github.io/Kakera/out/KakeraClass.html#mixins">mixins</a>
+</h4>
+
+<pre><code>array mixins
+</code></pre>
+
+<p>Kakera는 javascript code를 재활용하기 위한 minxin 패턴을 제공한다. 여러 component가 mixins를 활용하여 동일한 behavior를 공유할 수  있도록 할 수 있다.</p>
+
+<h4>
+<a id="deps" class="anchor" href="#deps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://dotnettree.github.io/Kakera/out/KakeraClass.html#deps">deps</a>
+</h4>
+
+<pre><code>array deps
+</code></pre>
+
+<p>component의 의존성을 설정한다. 여기서 이야기하는 의존성 설정이란 자기자신이 가지는 child component의 class를 deps에 넣어줘야 한다는 것을 의미한다. </p>
+
+<h3>
+<a id="lifecycle" class="anchor" href="#lifecycle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lifecycle</h3>
+
+<h4>
+<a id="init" class="anchor" href="#init" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://dotnettree.github.io/Kakera/out/KakeraClass.html#init">init</a>
+</h4>
+
+<pre><code>void init
+</code></pre>
+
+<p>component의 initialize function.</p>
+
+<h4>
+<a id="willmount" class="anchor" href="#willmount" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://dotnettree.github.io/Kakera/out/KakeraClass.html#willMount">willMount</a>
+</h4>
+
+<pre><code>void willMount
+</code></pre>
+
+<p>component가 document에 append되기 직전에 호출된다. ajax 호출 등을 이 function에서 구현한다.</p>
+
+<h4>
+<a id="didmount" class="anchor" href="#didmount" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://dotnettree.github.io/Kakera/out/KakeraClass.html#didMount">didMount</a>
+</h4>
+
+<pre><code>void didMount
+</code></pre>
+
+<p>component가 document에 append된 직후에 호출된다. component의 layout 설정 등을 이 function에서 구현한다.</p>
+
+<h4>
+<a id="destroy" class="anchor" href="#destroy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://dotnettree.github.io/Kakera/out/KakeraClass.html#destroy">destroy</a>
+</h4>
+
+<pre><code>void destroy
+</code></pre>
+
+<p>component의 <a href="http://dotnettree.github.io/Kakera/out/KakeraClass.html#release">release function</a>이 불린 경우 호출되는 function. 해당 component가 가지고 있던 listener 또는 timer 등을 이 function에서 제거한다.</p>
+
+<h2>
 <a id="api-문서" class="anchor" href="#api-%EB%AC%B8%EC%84%9C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API 문서</h2>
 
-<p>작성 중...</p>
+<p><a href="http://dotnettree.github.io/Kakera/out/KakeraDOM.html">여기 클릭</a></p>
 
 <h2>
 <a id="release-note" class="anchor" href="#release-note" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release note</h2>
@@ -714,7 +803,7 @@ listener의 key는 event명+공백+css selector 형태로 만들어야 하며 va
 <li>1.1.0 (16.05.09)
 
 <ul>
-<li>KakeraOriginClass 
+<li>KakeraClass 
 
 <ul>
 <li>subclass function 추가. </li>
