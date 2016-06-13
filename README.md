@@ -54,11 +54,11 @@ Kakera는 기타 alt.js들과 다르게 transpiler가 필요하지않으며, 이
 대략적인 Kakera 프레임워크의 흐름을 배우기 위해 간단한 튜토리얼을 해보기로 하자.
 튜토리얼의 주제는 "탁상시계"이다. 이해를 돕기 위해 아래 그림을 보기로하자.
 
-![table_clock](table_clock.png)
+![table_clock](./table_clock.png)
 
 우리는 이 탁상시계를 다음과 같이 분해를 할 것이다.
 
-![table_clock](table_clock2.png)
+![table_clock](./table_clock2.png)
 
 분해한 component structure는 다음과 같이 된다.
 
@@ -697,12 +697,12 @@ void didMount
 ```
 component가 document에 append된 직후에 호출된다. component의 layout 설정 등을 이 function에서 구현한다.
 
-#### [destroy](http://dotnettree.github.io/Kakera/out/KakeraClass.html#didMount)
+#### [destroy](http://dotnettree.github.io/Kakera/out/KakeraClass.html#destroy)
 
 ```
 void destroy
 ```
-component가 document에 remove 될 시 호출된다. init function에서 설정한 listener 또는 timer 등을 이 function에서 제거한다.
+component의 [release function](http://dotnettree.github.io/Kakera/out/KakeraClass.html#release)이 불린 경우 호출되는 function. 해당 component가 가지고 있던 listener 또는 timer 등을 이 function에서 제거한다.
 
 ## API 문서
 [여기 클릭](http://dotnettree.github.io/Kakera/out/KakeraDOM.html)
