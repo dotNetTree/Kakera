@@ -14,34 +14,10 @@
 9. 이미 작성한 코드를 다른 SPA로의 마이그레이션이 용이하다.
 
 ## 시작하기
-<div>
-	<style type="text/css">
-	  .main-content h2 {
-	    border-bottom:1px solid #eee !important;
-	  }
-	  .btn-download {
-	    font-size: 24px;
-	    background: #cc7a6f;
-	    color: #fafafa;
-	    border-radius: 4px;
-	    padding: 8px 16px;
-	    font-weight: 400;
-	    margin: 0 12px;
-	    display: inline-block;
-	    /*text-shadow: 0 1px 3px rgba(0,0,0,0.3);*/
-	    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
-	    text-decoration: none;
-	    box-sizing: border-box;
-	    border: none;
-	  }
-	  .btn-download:hover {
-	    text-decoration: none;
-	  }
-	</style>
-</div>
+
 간단하게 시작해보려면 아래의 Starter-Kit을 내려받도록하자. Starter-Kit에는 튜토리얼을 진행하기 위한 css/image, js 모듈도 포함되어 있다.
 <p style="text-align: center;">
-  <a href="https://github.com/dotNetTree/KakeraStaterKit/archive/master.zip" class="btn-download">
+  <a href="https://github.com/dotNetTree/KakeraStaterKit/archive/master.zip" class="btn-download" style="font-size: 24px; background: #cc7a6f; color: #fafafa; border-radius: 4px; padding: 8px 16px; font-weight: 400; margin: 0 12px; display: inline-block; /*text-shadow: 0 1px 3px rgba(0,0,0,0.3);*/ box-shadow: 0 1px 1px rgba(0,0,0,0.2); text-decoration: none; box-sizing: border-box; border: none;">
     Download Starter-Kit 1.1.1
   </a>
 </p>
