@@ -361,7 +361,7 @@ var DogBehavior = {
 
 var Werewolf = KakeraDOM.createClass("Werewolf", {
   mixins: [DogBehavior],
-  template: "<div>늑대인간 component</div>",
+  template: "&lt;div&gt;늑대인간 component&lt;/div&gt;",
   init: function () {
     this.howling();
     this.swingTail();
@@ -370,7 +370,7 @@ var Werewolf = KakeraDOM.createClass("Werewolf", {
 
 var PuppyRobot = KakeraDOM.createClass("PuppyRobot", {
   mixins: [DogBehavior],
-  template: "<div>강아지 로봇 component</div>",
+  template: "&lt;div&gt;강아지 로봇 component&lt;/div&gt;",
   init: function () {
     this.howling();
     this.swingTail();
@@ -839,7 +839,7 @@ release function에 의해 호출된다. component가 더이상 사용되지 않
 
 
     <pre class="prettyprint"><code>var Clock = KakeraDOM.createClass("Clock", {
-  template: "<div>Clock component</div>",
+  template: "&lt;div&gt;Clock component&lt;/div&gt;",
   init: function () {
     this._interID = setInterval(function () { console.log(new Date()); }, 1000);
   },
