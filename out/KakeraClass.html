@@ -88,6 +88,8 @@
 
                 <li data-name="KakeraClass#deps"><a href="KakeraClass.html#deps">deps</a></li>
 
+                <li data-name="KakeraClass#mixins"><a href="KakeraClass.html#mixins">mixins</a></li>
+
                 <li data-name="KakeraClass#template"><a href="KakeraClass.html#template">template</a></li>
 
             </ul>
@@ -101,6 +103,8 @@
                 <li data-name="KakeraClass#addChild"><a href="KakeraClass.html#addChild">addChild</a></li>
 
                 <li data-name="KakeraClass#children"><a href="KakeraClass.html#children">children</a></li>
+
+                <li data-name="KakeraClass#destroy"><a href="KakeraClass.html#destroy">destroy</a></li>
 
                 <li data-name="KakeraClass#didMount"><a href="KakeraClass.html#didMount">didMount</a></li>
 
@@ -153,6 +157,8 @@
 
             new KakeraClass<span class="signature">()</span>
         </h4>
+
+
 
 
     </div>
@@ -233,7 +239,7 @@ Kakera framework의 component를 정의하는 class.
 
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="deps">deps</h4>
+        <h4 class="name" id="deps">deps<span class="type-signature type array">Array</span> </h4>
     </div>
 
 
@@ -290,6 +296,85 @@ var Main = KakeraDOM.createClass("Main", {
     &lt;Sub />\
     &lt;Sub />\
   &lt;/div>\"
+});</code></pre>
+
+
+
+</dd>
+
+
+
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="mixins">mixins<span class="type-signature type array">Array</span> </h4>
+    </div>
+
+
+</dt>
+<dd>
+
+    <div class="description">
+        여러 component에 동일한 behavior를 갖도록 한다.
+    </div>
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy"><li>null</li></ul></dd>
+
+
+
+
+
+
+
+</dl>
+
+
+
+        <h5>Example</h5>
+
+
+
+    <pre class="prettyprint"><code>// 다음은 늑대인간과 강아지 로봇을 동일한 행위를 하도록 설계/구현한 예제이다.
+
+var DogBehavior = {
+  howling: function () { console.log("아오오~~~"); },
+  swingTail: function () { console.log("꼬리를 칩니다.") }
+};
+
+var Werewolf = KakeraDOM.createClass("Werewolf", {
+  mixins: [DogBehavior],
+  template: "<div>늑대인간 component</div>",
+  init: function () {
+    this.howling();
+    this.swingTail();
+  }
+});
+
+var PuppyRobot = KakeraDOM.createClass("PuppyRobot", {
+  mixins: [DogBehavior],
+  template: "<div>강아지 로봇 component</div>",
+  init: function () {
+    this.howling();
+    this.swingTail();
+  }
 });</code></pre>
 
 
@@ -374,6 +459,7 @@ render를 override해서 처리해야한다.
 
             addChild<span class="signature">(child)</span>
         </h4>
+
 
 
 
@@ -516,6 +602,7 @@ KakeraDOM.render(
 
             children<span class="signature">(keyOrIdx)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Object|Array}</span>
         </h4>
+
 
 
 
@@ -682,10 +769,101 @@ KakeraDOM.render(
 
 <dt>
     <div class="nameContainer">
+        <h4 class="name" id="destroy">
+
+            destroy<span class="signature">()</span>
+        </h4>
+
+
+
+
+
+    </div>
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        (!주의 - 직접 호출하지 말 것 )
+release function에 의해 호출된다. component가 더이상 사용되지 않으므로 listener 또는 timer 등을 이 function에서 제거한다.
+    </div>
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h5>Example</h5>
+
+
+
+    <pre class="prettyprint"><code>var Clock = KakeraDOM.createClass("Clock", {
+  template: "<div>Clock component</div>",
+  init: function () {
+    this._interID = setInterval(function () { console.log(new Date()); }, 1000);
+  },
+  didMount: function () {
+    setTimeout(function () { this.release(); }.bind(this), 3000);	// 3초 후 이 컴포넌트를 release한다.
+  },
+	 destroy: function () {
+    clearInterval(this._interID);
+  }
+});</code></pre>
+
+
+
+</dd>
+
+
+
+<dt>
+    <div class="nameContainer">
         <h4 class="name" id="didMount">
 
             didMount<span class="signature">()</span>
         </h4>
+
 
 
 
@@ -757,6 +935,7 @@ KakeraDOM.render(
 
 
 
+
     </div>
 
 
@@ -765,7 +944,7 @@ KakeraDOM.render(
 
 
     <div class="description">
-        KakeraClass가 instace화 될때 불리우는 initialize function.
+        component가 instace화 될때 불리우는 initialize function.
     </div>
 
 
@@ -822,6 +1001,7 @@ KakeraDOM.render(
 
             refresh<span class="signature">()</span>
         </h4>
+
 
 
 
@@ -894,6 +1074,7 @@ KakeraDOM.render(
 
 
 
+
     </div>
 
 
@@ -962,6 +1143,7 @@ KakeraDOM.render(
 
 
 
+
     </div>
 
 
@@ -1027,6 +1209,7 @@ KakeraDOM.render(
 
             removeChild<span class="signature">(childOrIndex, childOrIndex, childOrIndex)</span>
         </h4>
+
 
 
 
@@ -1189,6 +1372,7 @@ KakeraDOM.render(
 
             render<span class="signature">()</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{String|Ojbect}</span>
         </h4>
+
 
 
 
@@ -1402,6 +1586,7 @@ KakeraDOM.render(
 
 
 
+
     </div>
 
 
@@ -1476,7 +1661,7 @@ KakeraDOM.render(
 
 
         <footer>
-            Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Jun 10 2016 17:43:29 GMT+0900 (KST)
+            Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Jun 13 2016 16:10:15 GMT+0900 (KST)
         </footer>
     </div>
 </div>

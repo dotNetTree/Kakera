@@ -88,6 +88,8 @@
 
                 <li data-name="KakeraClass#deps"><a href="KakeraClass.html#deps">deps</a></li>
 
+                <li data-name="KakeraClass#mixins"><a href="KakeraClass.html#mixins">mixins</a></li>
+
                 <li data-name="KakeraClass#template"><a href="KakeraClass.html#template">template</a></li>
 
             </ul>
@@ -101,6 +103,8 @@
                 <li data-name="KakeraClass#addChild"><a href="KakeraClass.html#addChild">addChild</a></li>
 
                 <li data-name="KakeraClass#children"><a href="KakeraClass.html#children">children</a></li>
+
+                <li data-name="KakeraClass#destroy"><a href="KakeraClass.html#destroy">destroy</a></li>
 
                 <li data-name="KakeraClass#didMount"><a href="KakeraClass.html#didMount">didMount</a></li>
 
@@ -161,7 +165,13 @@
 <li>OOP의 개념을 숙지하고 있는 개발자라면 learning cost가 적게 든다.</li>
 <li>이미 작성한 코드를 다른 SPA로의 마이그레이션이 용이하다.</li>
 </ol>
-<h2>시작하기</h2><p><a target="_blank" href="https://github.com/dotNetTree/KakeraStaterKit/archive/master.zip">Start-Kit</a>을 받은 후 <code>app</code>폴더 밑에 hellokakera.html을 만들어보자.</p>
+<h2>시작하기</h2><p>간단하게 시작해보려면 아래의 Starter-Kit을 내려받도록하자. Starter-Kit에는 튜토리얼을 진행하기 위한 css/image, js 모듈도 포함되어 있다.</p>
+<p><p style="text-align: center;">
+  <a target="_blank" href="https://github.com/dotNetTree/KakeraStaterKit/archive/master.zip" class="btn-download" style="font-size: 24px; background: #cc7a6f; color: #fafafa; border-radius: 4px; padding: 8px 16px; font-weight: 400; margin: 0 12px; display: inline-block; /*text-shadow: 0 1px 3px rgba(0,0,0,0.3);*/ box-shadow: 0 1px 1px rgba(0,0,0,0.2); text-decoration: none; box-sizing: border-box; border: none;">
+    Download Starter-Kit 1.1.1
+  </a>
+</p>
+Starter-Kit 을 받은 후 <code>app</code>폴더 밑에 hellokakera.html을 생성하고 아래의 코드를 작성해보자.</p>
 <pre class="prettyprint source"><code>&lt;!doctype html>
 &lt;html>
     &lt;head>
@@ -181,12 +191,13 @@
             );
         &lt;/script>
     &lt;/body>
-&lt;/html></code></pre><p>여기에서 KakeraDOM.createClass에 의해 생성된 Function을 <strong>Component Class</strong>라 부르며 이를 활용하여 복잡하고 다양한 화면과 기능을 구현할 수 있게 된다.</p>
+&lt;/html></code></pre><p>Kakera는 기타 alt.js들과 다르게 transpiler가 필요하지않으며, 이미 이 상태로 Product를 생산할 수 있는 준비가 완료된 것이다.</p>
+<p>위 코드에서 KakeraDOM.createClass에 의해 생성된 Function을 <strong>Component Class</strong>라 부르며 이를 활용하여 복잡하고 다양한 화면과 기능을 구현할 수 있게 된다.</p>
 <h2>튜토리얼</h2><p>대략적인 Kakera 프레임워크의 흐름을 배우기 위해 간단한 튜토리얼을 해보기로 하자.
 튜토리얼의 주제는 &quot;탁상시계&quot;이다. 이해를 돕기 위해 아래 그림을 보기로하자.</p>
-<p><img src="table_clock.png" alt="table_clock"></p>
+<p><img src="./table_clock.png" alt="table_clock"></p>
 <p>우리는 이 탁상시계를 다음과 같이 분해를 할 것이다.</p>
-<p><img src="table_clock2.png" alt="table_clock"></p>
+<p><img src="./table_clock2.png" alt="table_clock"></p>
 <p>분해한 component structure는 다음과 같이 된다.</p>
 <pre class="prettyprint source"><code>TableClock
 └── Display
@@ -699,7 +710,16 @@ listener의 key는 event명+공백+css selector 형태로 만들어야 하며 va
   &lt;/script>
 
 &lt;/body>
-&lt;/html></code></pre><h2>API 문서</h2><p>좌측 navigation 영역 참조.</p>
+&lt;/html></code></pre><h2>Component Specs / Lifecycle</h2><h3>Component Specs</h3><h4><a target="_blank" href=".//KakeraClass.html#template">template</a> / <a target="_blank" href=".//KakeraClass.html#render">render</a></h4><pre class="prettyprint source"><code>string template
+string|object render()</code></pre><p>template, render function은 둘 중 하나가 반드시 구현되어야 한다.
+둘 다 single child element 형태의 문자열을 반환해야 한다.</p>
+<h4><a target="_blank" href="./KakeraClass.html#mixins">mixins</a></h4><pre class="prettyprint source"><code>array mixins</code></pre><p>Kakera는 javascript code를 재활용하기 위한 minxin 패턴을 제공한다. 여러 component가 mixins를 활용하여 동일한 behavior를 공유할 수  있도록 할 수 있다.</p>
+<h4><a target="_blank" href=".//KakeraClass.html#deps">deps</a></h4><pre class="prettyprint source"><code>array deps</code></pre><p>component의 의존성을 설정한다. 여기서 이야기하는 의존성 설정이란 자기자신이 가지는 child component의 class를 deps에 넣어줘야 한다는 것을 의미한다. </p>
+<h3>Lifecycle</h3><h4><a target="_blank" href=".//KakeraClass.html#init">init</a></h4><pre class="prettyprint source"><code>void init</code></pre><p>component의 initialize function.</p>
+<h4><a target="_blank" href=".//KakeraClass.html#willMount">willMount</a></h4><pre class="prettyprint source"><code>void willMount</code></pre><p>component가 document에 append되기 직전에 호출된다. ajax 호출 등을 이 function에서 구현한다.</p>
+<h4><a target="_blank" href=".//KakeraClass.html#didMount">didMount</a></h4><pre class="prettyprint source"><code>void didMount</code></pre><p>component가 document에 append된 직후에 호출된다. component의 layout 설정 등을 이 function에서 구현한다.</p>
+<h4><a target="_blank" href=".//KakeraClass.html#destroy">destroy</a></h4><pre class="prettyprint source"><code>void destroy</code></pre><p>component의 <a target="_blank" href=".//KakeraClass.html#release">release function</a>이 불린 경우 호출되는 function. 해당 component가 가지고 있던 listener 또는 timer 등을 이 function에서 제거한다.</p>
+<h2>API 문서</h2><p><a target="_blank" href=".//KakeraDOM.html">여기 클릭</a></p>
 <h2>Release note</h2><ul>
 <li>1.1.1 (16.05.30)<ul>
 <li>bugfix <ul>
@@ -709,7 +729,7 @@ listener의 key는 event명+공백+css selector 형태로 만들어야 하며 va
 </ul>
 </li>
 <li>1.1.0 (16.05.09)<ul>
-<li>KakeraOriginClass <ul>
+<li>KakeraClass <ul>
 <li>subclass function 추가. </li>
 <li>multiline function deprecated 됨.</li>
 </ul>
@@ -732,7 +752,7 @@ listener의 key는 event명+공백+css selector 형태로 만들어야 하며 va
 
 
         <footer>
-            Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Jun 10 2016 17:50:38 GMT+0900 (KST)
+            Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Jun 13 2016 16:01:33 GMT+0900 (KST)
         </footer>
     </div>
 </div>
