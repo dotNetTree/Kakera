@@ -663,6 +663,12 @@ string|object render()
 template, render function은 둘 중 하나가 반드시 구현되어야 한다.
 둘 다 single child element 형태의 문자열을 반환해야 한다.
 
+### [el](http://dotnettree.github.io/Kakera/out/KakeraClass.html#el)
+```
+element el
+```
+template이나 render에 의해 생성된 element.
+
 #### [mixins](http://dotnettree.github.io/Kakera/out/KakeraClass.html#mixins)
 ```
 array mixins
@@ -673,7 +679,13 @@ Kakera는 javascript code를 재활용하기 위한 minxin 패턴을 제공한�
 ```
 array deps
 ```
-component의 의존성을 설정한다. 여기서 이야기하는 의존성 설정이란 자기자신이 가지는 child component의 class를 deps에 넣어줘야 한다는 것을 의미한다. 
+component의 의존성을 설정한다. 여기서 이야기하는 의존성 설정이란 자기자신이 가지는 child component의 class를 deps에 넣어줘야 한다는 것을 의미한다.
+
+### [onWindowResize](http://dotnettree.github.io/Kakera/out/KakeraClass.html#onWindowResize)
+```
+function onWindowResize
+```
+window resize event listener를 설정한다.
 
 ### Lifecycle
 
